@@ -1,0 +1,39 @@
+{
+  "extends": [
+    "next/core-web-vitals"
+  ],
+  "rules": {
+    // Règles de performance
+    "@next/next/no-img-element": "error",
+    "@next/next/no-html-link-for-pages": "error",
+
+    // Règles d'accessibilité
+    "jsx-a11y/alt-text": "error",
+    "jsx-a11y/anchor-is-valid": "error",
+    "jsx-a11y/click-events-have-key-events": "warn",
+    "jsx-a11y/no-static-element-interactions": "warn",
+
+    // Règles de qualité du code
+    "no-console": "warn",
+    "no-debugger": "error",
+    "no-unused-vars": "off", // Désactivé car TypeScript le gère mieux
+
+    // Règles de sécurité
+    "no-eval": "error",
+    "no-implied-eval": "error",
+
+    // Règles de performance React
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-key": "error",
+    "react/prop-types": "off" // Désactivé car nous utilisons TypeScript
+  },
+  "overrides": [
+    {
+      "files": ["src/lib/**/*.ts"],
+      "rules": {
+        "no-console": "off" // Permettre console.log dans les fichiers utilitaires
+      }
+    }
+  ]
+}
