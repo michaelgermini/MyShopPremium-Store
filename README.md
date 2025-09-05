@@ -1,160 +1,187 @@
 # 🛒 Modern E-Commerce Store
 
-Une boutique en ligne moderne et élégante construite avec Next.js 14, TypeScript, Tailwind CSS et Shadcn/ui.
+A modern and elegant online store built with Next.js 14, TypeScript, Tailwind CSS and Shadcn/ui.
 
-## ✨ Fonctionnalités
+## ✨ Features
 
-### 🏪 Boutique
-- **Catalogue de produits** avec catégories organisées
-- **Recherche avancée** avec suggestions en temps réel
-- **Filtrage par catégories** et prix
-- **Pagination intelligente**
-- **Produits populaires** mis en avant
+### 🏪 Store
+- **Product catalog** with organized categories
+- **Advanced search** with real-time suggestions
+- **Filtering by categories** and price
+- **Smart pagination**
+- **Featured products** highlighted
 
-### 🛍️ Panier & Commandes
-- **Panier dynamique** avec mise à jour en temps réel
-- **Gestion des quantités** interactive
-- **Calcul automatique** des totaux
-- **Paiement sécurisé** avec Stripe
-- **Suivi des commandes**
+### 🛍️ Cart & Orders
+- **Dynamic cart** with real-time updates
+- **Interactive quantity management**
+- **Automatic total calculation**
+- **Secure payment** with Stripe
+- **Order tracking**
 
-### 👤 Utilisateur
-- **Authentification** NextAuth.js
-- **Profils utilisateurs** personnalisés
-- **Historique des commandes**
-- **Liste de souhaits** persistante
-- **Avis et commentaires**
+### 👤 User
+- **Authentication** with NextAuth.js
+- **Custom user profiles**
+- **Order history**
+- **Persistent wishlist**
+- **Reviews and comments**
 
 ### 🎨 Interface
-- **Design moderne** avec Shadcn/ui
-- **Responsive design** mobile-first
-- **Animations fluides** et transitions
-- **Thème sombre/clair**
-- **Accessibilité** WCAG 2.1
+- **Modern design** with Shadcn/ui
+- **Mobile-first responsive design**
+- **Smooth animations** and transitions
+- **Dark/light theme**
+- **Accessibility** WCAG 2.1 compliant
 
 ### 🔧 Administration
-- **Panneau d'administration** complet
-- **Gestion des produits** CRUD
-- **Gestion des commandes**
-- **Statistiques en temps réel**
-- **Gestion des utilisateurs**
+- **Complete admin panel**
+- **Product CRUD management**
+- **Order management**
+- **Real-time statistics**
+- **User management**
 
 ## 🚀 Technologies
 
 - **Frontend:** Next.js 14 (App Router)
 - **Styling:** Tailwind CSS + Shadcn/ui
-- **Base de données:** PostgreSQL avec Prisma
-- **Authentification:** NextAuth.js
-- **Paiement:** Stripe
-- **Déploiement:** Vercel
-- **Langage:** TypeScript
+- **Database:** PostgreSQL with Prisma
+- **Authentication:** NextAuth.js
+- **Payment:** Stripe
+- **Deployment:** Vercel
+- **Language:** TypeScript
 
 ## 📦 Installation
 
-1. **Cloner le repository**
+1. **Clone the repository**
    ```bash
-   git clone https://github.com/votre-username/modern-ecommerce.git
-   cd modern-ecommerce
+   git clone https://github.com/michaelgermini/MyShopPremium-Store.git
+   cd MyShopPremium-Store
    ```
 
-2. **Installer les dépendances**
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-3. **Configuration de la base de données**
+3. **Database configuration**
    ```bash
-   # Copier le fichier d'environnement
+   # Copy environment file
    cp .env.example .env.local
 
-   # Configurer votre base de données PostgreSQL
+   # Configure your PostgreSQL database
    DATABASE_URL="postgresql://username:password@localhost:5432/ecommerce"
 
-   # Configurer NextAuth.js
-   NEXTAUTH_SECRET="votre-secret-très-long"
+   # Configure NextAuth.js
+   NEXTAUTH_SECRET="your-very-long-secret"
    NEXTAUTH_URL="http://localhost:3000"
 
-   # Configurer Stripe
+   # Configure Stripe
    STRIPE_PUBLIC_KEY="pk_test_..."
    STRIPE_SECRET_KEY="sk_test_..."
    ```
 
-4. **Migration de la base de données**
+4. **Database migration**
    ```bash
    npx prisma migrate dev
    npx prisma db seed
    ```
 
-5. **Lancer l'application**
+5. **Start the application**
    ```bash
    npm run dev
    ```
 
-   L'application sera disponible sur [http://localhost:3000](http://localhost:3000)
+   The application will be available at [http://localhost:3000](http://localhost:3000)
 
-## 🏗️ Structure du projet
+## 🏗️ Project Structure
 
 ```
 src/
 ├── app/                    # Next.js App Router
-│   ├── (auth)/            # Routes d'authentification
-│   ├── (dashboard)/       # Dashboard utilisateur
-│   ├── admin/             # Panneau d'administration
+│   ├── (auth)/            # Authentication routes
+│   ├── (dashboard)/       # User dashboard
+│   ├── admin/             # Admin panel
 │   ├── api/               # API Routes
-│   ├── checkout/          # Processus de paiement
-│   └── products/          # Pages produits
-├── components/            # Composants réutilisables
-│   ├── ui/               # Composants Shadcn/ui
-│   ├── forms/            # Formulaires
+│   ├── checkout/          # Payment process
+│   └── products/          # Product pages
+├── components/            # Reusable components
+│   ├── ui/               # Shadcn/ui components
+│   ├── forms/            # Forms
 │   ├── layout/           # Layout components
-│   └── product/          # Composants produit
-├── lib/                  # Utilitaires et configurations
-│   ├── auth.ts           # Configuration NextAuth
-│   ├── db.ts             # Configuration base de données
-│   ├── stripe.ts         # Configuration Stripe
-│   └── utils.ts          # Fonctions utilitaires
-├── hooks/                # Custom hooks React
+│   └── product/          # Product components
+├── lib/                  # Utilities and configurations
+│   ├── auth.ts           # NextAuth configuration
+│   ├── db.ts             # Database configuration
+│   ├── stripe.ts         # Stripe configuration
+│   └── utils.ts          # Utility functions
+├── hooks/                # Custom React hooks
 ├── store/                # Zustand stores
-└── types/                # Types TypeScript
+└── types/                # TypeScript types
 ```
 
-## 🗄️ Base de données
+## 📸 Screenshots
 
-Le projet utilise Prisma avec PostgreSQL. Le schéma inclut :
+### Homepage
+![Modern Store Homepage](screenshots/Home.png)
 
-- **Users** - Utilisateurs et authentification
-- **Products** - Catalogue de produits
-- **Categories** - Catégories de produits
-- **Orders** - Commandes et transactions
-- **Reviews** - Avis et commentaires
-- **CartItems** - Articles du panier
+### Product Catalog
+![Explore All Products](screenshots/Explore_all_Products.png)
 
-## 🎨 Scripts disponibles
+### Product Details - Premium Yoga Mat
+![Premium Yoga Mat](screenshots/Premium_Yoga.png)
+
+### Quick Filters
+![Quick Filters](screenshots/Quick_Filters.png)
+
+### Customer Reviews
+![Reviews](screenshots/Reviews.png)
+
+### Authentication
+![Sign In](screenshots/Sign_In.png)
+![Sign Up](screenshots/Sign_Up.png)
+
+### Help & Support
+![Help](screenshots/Help.png)
+
+### Footer
+![Footer](screenshots/Fotter.png)
+
+## 🗄️ Database
+
+The project uses Prisma with PostgreSQL. The schema includes:
+
+- **Users** - Users and authentication
+- **Products** - Product catalog
+- **Categories** - Product categories
+- **Orders** - Orders and transactions
+- **Reviews** - Reviews and comments
+- **CartItems** - Cart items
+
+## 🎨 Available Scripts
 
 ```bash
-# Développement
-npm run dev          # Lancer le serveur de développement
-npm run build        # Build de production
-npm run start        # Lancer en production
-npm run lint         # Vérification ESLint
+# Development
+npm run dev          # Start development server
+npm run build        # Production build
+npm run start        # Start in production
+npm run lint         # ESLint check
 
-# Base de données
-npm run db:migrate   # Migration Prisma
-npm run db:studio    # Interface Prisma Studio
-npm run db:seed      # Seeding de la base de données
+# Database
+npm run db:migrate   # Prisma migration
+npm run db:studio    # Prisma Studio interface
+npm run db:seed      # Database seeding
 
 # Types
-npm run type-check   # Vérification TypeScript
+npm run type-check   # TypeScript check
 ```
 
 ## 🔧 Configuration
 
-### Variables d'environnement
+### Environment Variables
 
-Créer un fichier `.env.local` avec :
+Create a `.env.local` file with:
 
 ```env
-# Base de données
+# Database
 DATABASE_URL="postgresql://..."
 
 # NextAuth.js
@@ -166,24 +193,24 @@ STRIPE_PUBLIC_KEY="pk_test_..."
 STRIPE_SECRET_KEY="sk_test_..."
 STRIPE_WEBHOOK_SECRET="whsec_..."
 
-# Email (optionnel)
+# Email (optional)
 EMAIL_SERVER_HOST="smtp.gmail.com"
 EMAIL_SERVER_PORT="587"
 EMAIL_SERVER_USER="..."
 EMAIL_SERVER_PASSWORD="..."
 ```
 
-## 🚀 Déploiement
+## 🚀 Deployment
 
-### Vercel (Recommandé)
+### Vercel (Recommended)
 
-1. **Connecter votre repository GitHub à Vercel**
-2. **Ajouter les variables d'environnement** dans les paramètres Vercel
-3. **Déployer automatiquement** à chaque push
+1. **Connect your GitHub repository to Vercel**
+2. **Add environment variables** in Vercel settings
+3. **Deploy automatically** on every push
 
-### Autres plateformes
+### Other Platforms
 
-Le projet peut être déployé sur :
+The project can be deployed on:
 - **Netlify**
 - **Railway**
 - **Render**
@@ -191,31 +218,31 @@ Le projet peut être déployé sur :
 
 ## 🤝 Contribution
 
-1. Fork le projet
-2. Créer une branche feature (`git checkout -b feature/AmazingFeature`)
-3. Commit vos changements (`git commit -m 'Add some AmazingFeature'`)
-4. Push vers la branche (`git push origin feature/AmazingFeature`)
-5. Ouvrir une Pull Request
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📝 Licence
+## 📝 License
 
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+This project is licensed under MIT. See the `LICENSE` file for more details.
 
 ## 📞 Support
 
-Pour toute question ou problème :
-- Ouvrir une issue sur GitHub
-- Contacter l'équipe de développement
+For any questions or issues:
+- Open an issue on GitHub
+- Contact the development team
 
-## 🙏 Remerciements
+## 🙏 Acknowledgments
 
-- [Next.js](https://nextjs.org/) - Framework React
-- [Shadcn/ui](https://ui.shadcn.com/) - Composants UI
-- [Tailwind CSS](https://tailwindcss.com/) - Framework CSS
-- [Prisma](https://prisma.io/) - ORM de base de données
-- [Stripe](https://stripe.com/) - Solution de paiement
-- [NextAuth.js](https://next-auth.js.org/) - Authentification
+- [Next.js](https://nextjs.org/) - React Framework
+- [Shadcn/ui](https://ui.shadcn.com/) - UI Components
+- [Tailwind CSS](https://tailwindcss.com/) - CSS Framework
+- [Prisma](https://prisma.io/) - Database ORM
+- [Stripe](https://stripe.com/) - Payment Solution
+- [NextAuth.js](https://next-auth.js.org/) - Authentication
 
 ---
 
-⭐ **N'oubliez pas de mettre une étoile si ce projet vous plaît !**
+⭐ **Don't forget to star this project if you like it!**
